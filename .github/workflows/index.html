@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TONMovieReview | เว็บรีวิวหนัง</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .movie-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .movie-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .rating {
+      color: #ff9800;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    video, audio {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TONMovieReview</h1>
+    <p>รวมรีวิวหนังน่าดูสำหรับทุกคน</p>
+  </header>
+
+  <nav>
+    <a href="Mainpage.html">หน้าแรก</a>
+    <a href="Action.html">แอคชั่น</a>
+    <a href="Sci-Fi.html">ไซไฟ</a>
+    <a href="horror.html">สยองขวัญ</a>
+    <a href="contract.html">ติดต่อ</a>
+    <a href="extra.html">เกี่ยวกับเรา</a>
+  </nav>
+
+  <main>
+    <h2>หนังแนะนำ</h2>
+    <div class="movie-list">
+      <div class="movie-card">
+        <img src="Avatar2.jpg" alt="Avatar 2">
+        <h3>Avatar: The Way of Water</h3>
+        <div class="rating">⭐ 9.0/10</div>
+        <p>การผจญภัยครั้งใหม่ใต้ทะเลที่อลังการและตื่นตาตื่นใจ</p>
+      </div>
+      <div class="movie-card">
+        <img src="oppenheimer.jpg" alt="Oppenheimer">
+        <h3>Oppenheimer</h3>
+        <div class="rating">⭐ 8.5/10</div>
+        <p>เรื่องราวของบิดาแห่งระเบิดปรมาณู ถ่ายทอดอย่างลึกซึ้ง</p>
+      </div>
+      <div class="movie-card">
+        <img src="spiderman no way home.jpg" alt="Spider-Man">
+        <h3>Spider-Man: No Way Home</h3>
+        <div class="rating">⭐ 9.2/10</div>
+        <p>รวมเหล่าสไปเดอร์แมนจากจักรวาลต่าง ๆ มารวมตัวกัน</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 60px;">ตัวอย่างหนัง</h2>
+<video id="movieTrailer" controls autoplay muted>
+  <source src="trailer1.mp4" type="video/mp4">
+</video>
+
+<script>
+  // รายชื่อวิดีโอตัวอย่าง
+  const trailers = [
+    "trailer1.mp4",
+    "trailer2.mp4",
+    "trailer3.mp4"
+  ];
+
+  let index = 0;
+  const videoPlayer = document.getElementById("movieTrailer");
+
+  // เมื่อวิดีโอจบ ให้เปลี่ยนเป็นเรื่องถัดไป
+  videoPlayer.addEventListener("ended", () => {
+    index = (index + 1) % trailers.length;
+    videoPlayer.src = trailers[index];
+    videoPlayer.play();
+  });
+</script>
+
+  <footer>
+    <p>&copy; 2025 TONMovieReview | สงวนลิขสิทธิ์</p>
+  </footer>
+
+ 
+
+</body>
+</html>
